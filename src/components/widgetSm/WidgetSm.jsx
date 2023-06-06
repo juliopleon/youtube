@@ -11,7 +11,7 @@ export default function WidgetSm() {
     const getNewUsers = async () => {
       try {
         const res = await axios.get("/users?new=true", {
-          header: {
+          headers: {
             token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTlhNWJiNmRkYjRlODg1NTMzZGRhNSIsImlzQWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjg2MDE3MDYzLCJleHAiOjE2ODY0NDkwNjN9.q2bDOAQe_LwXVa-psFXNGRW-DJVheQsggLJuFnKa1kE"
           },
         });
@@ -31,12 +31,12 @@ export default function WidgetSm() {
 
           <li className="widgetSmListItem">
             <img
-              src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src={user.profilePic || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKbFZOqWAo8inJD3PaOw62ijntmmPr-i2p8w&usqp=CAU"}
               alt=""
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Anna Keller</span>
+              <span className="widgetSmUsername">{user.username}</span>
               <span className="widgetSmUserTitle">Software Engineer</span>
             </div>
             <button className="widgetSmButton">
