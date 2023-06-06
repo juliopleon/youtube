@@ -1,6 +1,6 @@
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
-import "./App.css";
+import "./app.css";
 import Home from "./pages/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserList from "./pages/userList/UserList";
@@ -9,8 +9,24 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import { useState } from "react";
 
 function App() {
+  const MONTHS = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",];
+
+  const [userStats, setUserStats] = useState([]);
   return (
     <Router>
       <Topbar />
