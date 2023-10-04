@@ -38,7 +38,7 @@ export default function NewProduct() {
         }
       );
     });
-  };
+  }
 
   const handleUpload = (e) => {
     e.preventDefault();
